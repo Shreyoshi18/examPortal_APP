@@ -1,0 +1,42 @@
+<h1 class="mt10">Questions of {{title}} :</h1>
+<div class="bootstrap-wrapper">
+
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngFor="let q of question; let i = index" class="mt10">
+                <mat-card-content>
+                    <p><b>Q {{i+1}} :</b> <span class="ml10" [innerHtml]="q.content"></span> </p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>a.</b><span class="ml10">{{q.option1}}</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>b.</b><span class="ml10">{{q.option2}}</span></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>c.</b><span class="ml10">{{q.option3}}</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>d.</b><span class="ml10">{{q.option4}}</span></p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="container mt20"><p><b>Correct Answer :</b><span class="ml10">{{q.answer}}</span></p></div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions class="ml20">
+                    <button (click)="delete(q.quesId)" mat-stroked-button color = "warn">DELETE</button>
+                    <button [routerLink]="'/admin-dashboard/question/update/'+q.quesId" mat-stroked-button color = "primary">UPDATE</button>
+                </mat-card-actions>
+            </mat-card>
+            <div class="container text-center mt10 mb10">
+                <button [routerLink]="'/admin-dashboard/addQuestions/'+ id+'/'+title" mat-raised-button color="primary">ADD</button>
+            </div>
+        </div>
+    </div>
+
+</div>

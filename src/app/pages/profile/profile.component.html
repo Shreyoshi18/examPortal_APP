@@ -1,0 +1,51 @@
+<mat-card class="card" *ngIf="users">
+   
+   <mat-card-content>
+       <div class="bootstrap-wrapper">
+           <div class="container">
+               <div class="container text-center" >
+                  <h3>Your Profile Details</h3>
+                  <img src="../../../assets/profile.png" alt="Profile picture" class="profile">
+               </div>
+              <div class="container text-center">
+                  <h3> {{users.fName}} {{users.lName}}</h3>
+              </div>
+               <div class="row">
+                   <div class="col-md-10 offset-md-1">
+                       <table class="table text-center">
+                           <tr>
+                               <td>Username</td>
+                               <td>{{users.username}}</td>
+                           </tr>
+
+                           <tr>
+                             <td>UserId</td>
+                             <td>{{users.id}}</td>
+                           </tr>
+
+                           <tr>
+                             <td>Phone Number</td>
+                             <td>{{users.pNum}}</td>
+                           </tr>
+
+                           <tr>
+                             <td>Role</td>
+                             <td>{{users.authorities[0].authority}}</td>
+                           </tr>
+
+                           <tr>
+                             <td>Status</td>
+                             <td>{{users.enabled?"Active":"Not Active"}}</td>
+                           </tr>
+
+                       </table>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </mat-card-content>
+   <mat-card-actions class="text-center">
+    <button mat-raised-button color = "primary">Update</button>
+    <button mat-raised-button color ="accent">Save</button>
+  </mat-card-actions>
+</mat-card>
