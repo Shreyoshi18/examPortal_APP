@@ -36,6 +36,15 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { CategoryComponent } from './pages/user/category/category.component';
+import { QuizComponent } from './pages/user/quiz/quiz.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { CategoryQuizComponent } from './pages/user/category-quiz/category-quiz.component';
+import { PreStartComponent } from './pages/user/pre-start/pre-start.component';
+import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -58,6 +67,13 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     ViewQuizQuestionsComponent,
     AddQuestionComponent,
     UpdateQuestionComponent,
+    UserSidebarComponent,
+    CategoryComponent,
+    QuizComponent,
+    UserProfileComponent,
+    CategoryQuizComponent,
+    PreStartComponent,
+    QuizStartComponent,
 
   ],
   imports: [
@@ -76,7 +92,9 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatRadioModule,
+    MatProgressSpinnerModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

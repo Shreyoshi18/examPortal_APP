@@ -15,10 +15,16 @@ export class QuestionService {
     return this.http.get(this.baseUrl+'/'+id)
   }
 
-  //get all questions of a quiz
+  //get all questions of a quiz in admin section
   public getQuestions(id:any)
   {
     return this.http.get(this.baseUrl+'/quiz/'+id)
+  }
+
+  //get all questions of a quiz in user sectio
+  public getTestQuestions(id:any)
+  {
+    return this.http.get(this.baseUrl+'/test/'+id)
   }
 
   //add a question to a quiz

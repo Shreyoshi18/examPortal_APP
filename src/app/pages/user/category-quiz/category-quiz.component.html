@@ -1,0 +1,20 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mt10 mb10" *ngFor="let q of quizzes" >
+                <mat-card class="h100 w100">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="font-size: 12px;">{{q.title}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="mt10 mb10">
+                        <p>{{q.description}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button [routerLink]="'/user-dashboard/instructions/'+q.qId" mat-stroked-button color="primary" >Start</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

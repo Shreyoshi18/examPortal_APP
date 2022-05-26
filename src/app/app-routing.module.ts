@@ -18,6 +18,11 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { QuizComponent } from './pages/user/quiz/quiz.component';
+import { CategoryComponent } from './pages/user/category/category.component';
+import { CategoryQuizComponent } from './pages/user/category-quiz/category-quiz.component';
+import { PreStartComponent } from './pages/user/pre-start/pre-start.component';
+import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 
 const routes: Routes = [
   {
@@ -80,7 +85,29 @@ const routes: Routes = [
   {
     path:'user-dashboard', 
     component:UserDashboardComponent,
-    pathMatch:'full',
+    canActivate: [UserGuard],
+    children:[
+      {
+        path:'category',
+        component:CategoryComponent
+      },
+      {
+        path:'quiz',
+        component:QuizComponent
+      },
+      {
+        path:'quiz/:id',
+        component:CategoryQuizComponent
+      },
+      {
+        path:'instructions/:qid',
+        component:PreStartComponent
+      }
+    ]
+  },
+  {
+    path:'quiz-start/:qid',
+    component:QuizStartComponent,
     canActivate: [UserGuard]
   }
 ];
